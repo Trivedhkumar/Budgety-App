@@ -1,0 +1,19 @@
+To Do List:
+  1. Add event Handler
+  2. Get input Values
+  3. Add the new items to our data structure
+  4. Add the new item to the UI
+  5.Calculate budget
+  6.Update the UI
+
+UI MODULE:
+  2. Get input Values 
+  4. Add the new item to the UI
+  6.Update the UI
+  
+DATA MODULE:
+  3. Add the new items to our data structure
+  5.Calculate budget
+
+CONTROLLER MODULE:
+  1. Add event Handler
