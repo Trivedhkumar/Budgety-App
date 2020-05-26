@@ -17,3 +17,11 @@ DATA MODULE:
 
 CONTROLLER MODULE:
   1. Add event Handler
+
+
+To Do List - 2:
+  1. Add event Handler
+  2. Delete the item from our datastructure
+  3. Delete the item to the UI
+  4. Re-calculate budget
+  5. Update the UI

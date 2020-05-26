@@ -22,7 +22,7 @@ var budgetController = (function () {
     });
     data.totals[type] = sum;
   };
-  
+
   //Datastructure to store inc,exp --budgetCotroller
   var data = {
     allItems: {
@@ -103,6 +103,10 @@ var UIController = (() => {
     inputBtn: ".add__btn",
     incomeContainer: ".income__list",
     expensesContainer: ".expenses__list",
+    budgetLabel: ".budget__value",
+    incomeLabel: ".budget__income--value",
+    expensesLabel: ".budget__expenses--value",
+    percentageLabel: ".budget__expenses--percentage",
   };
 
   //UIController Return
@@ -154,6 +158,20 @@ var UIController = (() => {
       fieldsArr[0].focus();
     },
 
+    //displayBudget -Method --UIController
+    displayBudget: (obj) => {
+      document.querySelector(DOMStings.budgetLabel).textContent = obj.budget;
+      document.querySelector(DOMStings.incomeLabel).textContent = obj.totalInc;
+      document.querySelector(DOMStings.expensesLabel).textContent =
+        obj.totalExp;
+      if (obj.percentage > 0) {
+        document.querySelector(DOMStings.percentageLabel).textContent =
+          obj.percentage + "%";
+      } else {
+        document.querySelector(DOMStings.percentageLabel).textContent = "---";
+      }
+    },
+
     //getDOMStrings -Method --UIController
     getDOMStrings: () => DOMStings,
   };
@@ -183,7 +201,7 @@ var controller = ((budgetCtrl, UICtrl) => {
     var budget = budgetCtrl.getBudget();
 
     //3.Display the budget on the UI
-    console.log(budget);
+    UICtrl.displayBudget(budget);
   };
   //ctrlAddItem -fun%exp --controller
   var ctrlAddItem = () => {
@@ -214,6 +232,12 @@ var controller = ((budgetCtrl, UICtrl) => {
     //init:  -Method --controller
     init: () => {
       console.log("application has Started");
+      UICtrl.displayBudget({
+        budget: 0,
+        totalInc: 0,
+        totalExp: 0,
+        percentage: -1,
+      });
       setupEventListener();
     },
   };
