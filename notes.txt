@@ -25,3 +25,10 @@ To Do List - 2:
   3. Delete the item to the UI
   4. Re-calculate budget
   5. Update the UI
+
+To Do List - 3:
+  1.Calculate the percentage
+  2. Update the percentages in UI
+  3.Display the current month and year 
+  4.Number formatting
+  5.Improve input field UX
